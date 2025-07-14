@@ -61,7 +61,10 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				navy: '#0A1F2D',
+				gold: '#C9A26C',
+				white: '#FFFFFF',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -89,6 +92,10 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
+			},
+			fontFamily: {
+				serif: ["Playfair Display", "serif"],
+				sans: ["Inter", "sans-serif"],
 			}
 		}
 	},
