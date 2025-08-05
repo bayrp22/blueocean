@@ -112,12 +112,21 @@ const Contact = () => {
                 />
               </div>
 
-              <Button
-                type="submit"
-                className="w-full bg-gray-900 text-white hover:bg-gray-800 py-7 text-lg font-medium"
-              >
-                Send message
-              </Button>
+              <div className="relative group cursor-pointer w-full" onClick={handleSubmit}>
+                <div className="w-full bg-gray-800 text-white rounded-full px-6 py-4 text-lg font-medium flex items-center justify-center gap-3 relative overflow-hidden transition-all duration-500 group-hover:text-gray-800">
+                  <span className="relative z-20">Send message</span>
+                  <div className="relative flex items-center justify-center">
+                    {/* Expanding white circle - scales from arrow position */}
+                    <div className="absolute w-6 h-6 bg-white rounded-full transition-all duration-500 ease-in-out group-hover:scale-[24] transform-origin-center z-10"></div>
+                    {/* Arrow circle - becomes dark on hover */}
+                    <div className="relative z-20 w-6 h-6 bg-white rounded-full flex items-center justify-center transition-all duration-500 group-hover:bg-gray-800">
+                      <svg className="w-3 h-3 text-gray-800 group-hover:text-white transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </form>
           </div>
         </div>

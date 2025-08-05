@@ -125,7 +125,7 @@ export default {
 			},
 			fontFamily: {
 				serif: ["Playfair Display", "serif"],
-				sans: ["Montserrat", "Inter", "sans-serif"],
+				sans: ["Manrope", "Inter", "sans-serif"],
 			}
 		}
 	},

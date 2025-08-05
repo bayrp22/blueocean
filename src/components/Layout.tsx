@@ -23,7 +23,7 @@ const Layout = ({ children }: LayoutProps) => {
         {/* Mobile Navigation */}
         <div className="md:hidden bg-gray-800/90 backdrop-blur-md rounded-2xl px-5 py-5 mx-4">
           <nav className="flex justify-between items-center">
-            <h1 className="text-lg font-bold text-white tracking-wider">BLUE OCEAN</h1>
+            <h1 className="text-xl font-bold text-white tracking-wider">BLUE OCEAN</h1>
             
             {/* Mobile Menu Button */}
             <button 
@@ -37,7 +37,7 @@ const Layout = ({ children }: LayoutProps) => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex justify-between items-center px-6 py-6">
-          <h1 className="text-2xl font-bold text-white tracking-wider">BLUE OCEAN</h1>
+          <h1 className="text-3xl font-bold text-white tracking-wider">BLUE OCEAN</h1>
           
           <div className="flex items-center space-x-12">
             <button 
@@ -72,7 +72,7 @@ const Layout = ({ children }: LayoutProps) => {
           <div className="md:hidden fixed inset-0 bg-black/95 backdrop-blur-md">
             {/* Header with logo and close button */}
             <div className="flex justify-between items-center px-6 py-8">
-              <h1 className="text-2xl font-bold text-white tracking-wider">BLUE OCEAN</h1>
+              <h1 className="text-3xl font-bold text-white tracking-wider">BLUE OCEAN</h1>
               <button 
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-white hover:text-gray-300 transition-colors p-2"
