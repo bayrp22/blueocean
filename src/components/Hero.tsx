@@ -10,6 +10,8 @@ const Hero = () => {
           src="/Blue Ocean 7.jpg"
           alt="Blue Ocean Catamaran at Cabo Arch"
           className="w-full h-full object-cover object-center"
+          loading="eager"
+          fetchPriority="high"
         />
         
         {/* Dark overlay for better text readability */}
@@ -85,6 +87,8 @@ const Hero = () => {
                 src="/Blue Ocean 7.jpg"
                 alt="Blue Ocean Catamaran at Cabo Arch"
                 className="w-full h-full object-cover object-center"
+                loading="eager"
+                fetchPriority="high"
               />
               
               {/* Testimonial overlay on image */}

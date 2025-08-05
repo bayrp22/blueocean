@@ -1,8 +1,4 @@
-import { useState, useEffect } from "react";
-
 const About = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
   const images = [
     "/Blue Ocean 5.jpg",
     "/Blue Ocean 6.jpg", 
@@ -12,21 +8,23 @@ const About = () => {
     "/Blue Ocean.jpg"
   ];
 
-  // Continuous animation for carousel
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => prev + 0.015);
-    }, 100);
-
-    return () => clearInterval(interval);
-  }, []);
-
   // Create multiple copies for seamless infinite scroll
   const infiniteImages = [...images, ...images, ...images, ...images];
 
   return (
+    <>
+      <style>{`
+        @keyframes infinite-scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     <section id="about" className="min-h-screen flex items-center bg-white">
-      <div className="w-full py-20">
+              <div className="w-full pt-12 pb-20">
         {/* Text Content */}
         <div className="container mx-auto px-6 max-w-7xl mb-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -56,17 +54,19 @@ const About = () => {
           <div 
             className="flex"
             style={{
-              transform: `translateX(-${(currentImageIndex * 2.5) % (images.length * 25)}%)`,
-              transition: 'transform 0.1s linear',
-              width: `${infiniteImages.length * 25}%`
+              width: `${infiniteImages.length * 25}%`,
+              animation: 'infinite-scroll 120s linear infinite',
+              willChange: 'transform'
             }}
           >
             {infiniteImages.map((image, index) => (
-              <div key={index} className="w-full md:w-1/4 px-3">
+              <div key={index} className="w-full md:w-1/4" style={{ paddingLeft: '16px', paddingRight: '16px' }}>
                 <img
                   src={image}
                   alt={`Experience ${(index % images.length) + 1}`}
                   className="w-full h-64 lg:h-80 object-cover"
+                  loading="eager"
+                  fetchPriority="high"
                 />
               </div>
             ))}
@@ -74,6 +74,7 @@ const About = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

@@ -42,21 +42,46 @@ const SocialProof = () => {
   ];
 
   return (
-    <section className="min-h-screen flex items-center bg-gray-50">
-      <div className="w-full py-20">
-        <div className="text-center mb-16 px-6">
-          <Badge className="mb-6 bg-gray-900 text-white px-6 py-2 text-sm">Testimonials</Badge>
-          <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Hear from our clients
-          </h2>
-          <p className="text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto">
-            Hear from our happy clients about their experience working with Refit and the quality of our craftsmanship.
-          </p>
-        </div>
+    <>
+      <style>{`
+        @keyframes marquee-left {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        @keyframes marquee-right {
+          0% {
+            transform: translateX(-50%);
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
+      `}</style>
+      <section className="min-h-screen flex items-center bg-gray-50">
+        <div className="w-full py-20">
+          <div className="text-center mb-16 px-6">
+            <Badge className="mb-6 bg-gray-900 text-white px-6 py-2 text-sm">Testimonials</Badge>
+            <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+              Hear from our clients
+            </h2>
+            <p className="text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto">
+              Hear from our happy clients about their experience working with Refit and the quality of our craftsmanship.
+            </p>
+          </div>
 
-        {/* Top Row - Scrolling Left */}
-        <div className="relative mb-8 overflow-hidden whitespace-nowrap">
-          <div className="inline-block animate-marquee-left">
+          {/* Top Row - Scrolling Left */}
+          <div className="relative mb-8 overflow-hidden whitespace-nowrap">
+            <div 
+              className="inline-block"
+              style={{
+                animation: 'marquee-left 120s linear infinite',
+                willChange: 'transform'
+              }}
+            >
             {[...Array(8)].map((_, setIndex) => 
               testimonials.slice(0, 3).map((testimonial, index) => (
                 <div
@@ -83,9 +108,15 @@ const SocialProof = () => {
           </div>
         </div>
 
-        {/* Bottom Row - Scrolling Right */}
-        <div className="relative overflow-hidden whitespace-nowrap">
-          <div className="inline-block animate-marquee-right">
+                  {/* Bottom Row - Scrolling Right */}
+          <div className="relative overflow-hidden whitespace-nowrap">
+            <div 
+              className="inline-block"
+              style={{
+                animation: 'marquee-right 120s linear infinite',
+                willChange: 'transform'
+              }}
+            >
             {[...Array(8)].map((_, setIndex) => 
               testimonials.slice(3, 6).map((testimonial, index) => (
                 <div
@@ -113,6 +144,7 @@ const SocialProof = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

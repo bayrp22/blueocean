@@ -72,3 +72,18 @@ img {
   animation: marquee-right 25s linear infinite;
   will-change: transform;
 }
+
+/* Smooth Infinite Scroll Animation for About Section Carousel */
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 30s linear infinite;
+  will-change: transform;
+}
