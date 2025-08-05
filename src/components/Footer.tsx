@@ -7,22 +7,22 @@ const Footer = () => {
   };
 
   return (
-    <footer className="py-16 bg-gray-900 text-white border-t border-gray-800">
+    <footer className="py-24 bg-gray-900 text-white border-t border-gray-800">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 max-w-7xl mx-auto">
           {/* Logo section */}
           <div>
-            <h2 className="text-3xl font-bold mb-4">BLUE OCEAN</h2>
+            <h2 className="text-4xl font-bold mb-6">BLUE OCEAN</h2>
           </div>
 
           {/* Quick links */}
           <div>
-            <h3 className="text-lg font-medium mb-4">Quick links</h3>
-            <ul className="space-y-2">
+            <h3 className="text-xl font-medium mb-6">Quick links</h3>
+            <ul className="space-y-4">
               <li>
                 <button 
                   onClick={() => scrollToSection('about')}
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-lg text-gray-400 hover:text-white transition-colors"
                 >
                   About us
                 </button>
@@ -30,7 +30,7 @@ const Footer = () => {
               <li>
                 <button 
                   onClick={() => scrollToSection('experiences')}
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-lg text-gray-400 hover:text-white transition-colors"
                 >
                   Our work
                 </button>
@@ -38,7 +38,7 @@ const Footer = () => {
               <li>
                 <button 
                   onClick={() => scrollToSection('faqs')}
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-lg text-gray-400 hover:text-white transition-colors"
                 >
                   Services
                 </button>
@@ -48,11 +48,11 @@ const Footer = () => {
 
           {/* Additional links */}
           <div>
-            <ul className="space-y-2 mt-10">
+            <ul className="space-y-4 mt-12 md:mt-0">
               <li>
                 <a 
                   href="#testimonials"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-lg text-gray-400 hover:text-white transition-colors"
                 >
                   Testimonials
                 </a>
@@ -60,7 +60,7 @@ const Footer = () => {
               <li>
                 <button 
                   onClick={() => scrollToSection('faqs')}
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-lg text-gray-400 hover:text-white transition-colors"
                 >
                   FAQs
                 </button>
@@ -68,7 +68,7 @@ const Footer = () => {
               <li>
                 <button 
                   onClick={() => scrollToSection('contact')}
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-lg text-gray-400 hover:text-white transition-colors"
                 >
                   Contact
                 </button>

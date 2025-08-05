@@ -46,40 +46,40 @@ const FAQs = () => {
   };
 
   return (
-    <section id="faqs" className="py-20 bg-white">
-      <div className="container mx-auto px-6 max-w-4xl">
-        <div className="mb-12">
-          <span className="inline-block px-4 py-2 bg-gray-900 text-white text-sm rounded-full mb-4">
+    <section id="faqs" className="min-h-screen flex items-center bg-white">
+      <div className="container mx-auto px-6 py-20 max-w-5xl">
+        <div className="mb-16 text-center">
+          <span className="inline-block px-6 py-3 bg-gray-900 text-white text-base rounded-full mb-6">
             FAQs
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
             Answering your questions
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl lg:text-2xl text-gray-600">
             Got more questions? Send us your enquiry below
           </p>
         </div>
 
-        <Accordion type="single" collapsible className="space-y-4">
+        <Accordion type="single" collapsible className="space-y-6">
           {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`} className="border rounded-lg px-6">
-              <AccordionTrigger className="text-lg font-medium text-gray-900 hover:text-gray-700 py-6">
+            <AccordionItem key={index} value={`item-${index}`} className="border rounded-xl px-8">
+              <AccordionTrigger className="text-xl font-medium text-gray-900 hover:text-gray-700 py-8">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-gray-600 pb-6">
+              <AccordionContent className="text-lg text-gray-600 pb-8">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
 
-        <div className="mt-12 text-center">
+        <div className="mt-16 text-center">
           <Button 
             onClick={scrollToContact}
-            className="bg-gray-900 text-white hover:bg-gray-800 rounded-full px-8 py-6 text-lg font-medium flex items-center gap-2 mx-auto"
+            className="bg-gray-900 text-white hover:bg-gray-800 rounded-full px-10 py-8 text-xl font-medium flex items-center gap-3 mx-auto"
           >
             Get in touch
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </Button>
