@@ -19,7 +19,7 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="fixed md:absolute top-0 md:top-16 left-0 md:left-16 right-0 md:right-16 z-50 p-3 md:p-0">
+      <header className="fixed md:absolute top-0 md:top-8 left-0 md:left-16 right-0 md:right-16 z-50 p-3 md:p-0">
         {/* Mobile Navigation */}
         <div className="md:hidden bg-gray-800/90 backdrop-blur-md rounded-2xl px-5 py-5 mx-4">
           <nav className="flex justify-between items-center">

@@ -45,30 +45,30 @@ img {
 }
 
 /* Infinite Scroll Animations for Testimonials */
-@keyframes scroll-left {
+@keyframes marquee-left {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
-@keyframes scroll-right {
+@keyframes marquee-right {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
   100% {
     transform: translateX(0);
   }
 }
 
-.animate-scroll-left {
-  animation: scroll-left 30s linear infinite;
-  width: fit-content;
+.animate-marquee-left {
+  animation: marquee-left 25s linear infinite;
+  will-change: transform;
 }
 
-.animate-scroll-right {
-  animation: scroll-right 30s linear infinite;
-  width: fit-content;
+.animate-marquee-right {
+  animation: marquee-right 25s linear infinite;
+  will-change: transform;
 }

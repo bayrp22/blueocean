@@ -4,12 +4,12 @@ const About = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "/placeholder.svg",
-    "/placeholder.svg",
-    "/placeholder.svg",
-    "/placeholder.svg",
-    "/placeholder.svg",
-    "/placeholder.svg"
+    "/Blue Ocean 5.jpg",
+    "/Blue Ocean 6.jpg", 
+    "/Blue Ocean 7.jpg",
+    "/Blue Ocean 8.jpg",
+    "/Blue Ocean alt.jpg",
+    "/Blue Ocean.jpg"
   ];
 
   // Continuous animation for carousel
@@ -26,31 +26,33 @@ const About = () => {
 
   return (
     <section id="about" className="min-h-screen flex items-center bg-white">
-      <div className="container mx-auto px-6 max-w-7xl py-20">
+      <div className="w-full py-20">
         {/* Text Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-          <div>
-            <h2 className="text-5xl lg:text-6xl font-semibold text-gray-900 leading-tight">
-              50-ft Power<br />
-              Catamaran:<br />
-              Made for Waves
-            </h2>
-          </div>
-          <div className="space-y-4 flex flex-col justify-center">
-            <p className="text-lg lg:text-xl text-gray-700">
-              • <strong>Up to 22 guests</strong> on a <strong>50-ft power catamaran</strong> (fast, stable, comfortable)
-            </p>
-            <p className="text-lg lg:text-xl text-gray-700">
-              • <strong>Shaded lounge + sun deck</strong>, premium sound, freshwater rinse
-            </p>
-            <p className="text-lg lg:text-xl text-gray-700">
-              • <strong>Pro crew</strong> handles routes, gear, and service—just show up
-            </p>
+        <div className="container mx-auto px-6 max-w-7xl mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+              <h2 className="text-5xl lg:text-6xl font-semibold text-gray-900 leading-tight">
+                50-ft Power<br />
+                Catamaran:<br />
+                Made for Waves
+              </h2>
+            </div>
+            <div className="space-y-4 flex flex-col justify-center">
+              <p className="text-lg lg:text-xl text-gray-700">
+                • Up to <strong>22 guests</strong> on a <strong>50-ft power catamaran</strong> (fast, stable, comfortable)
+              </p>
+              <p className="text-lg lg:text-xl text-gray-700">
+                • <strong>Shaded lounge + sun deck</strong>, premium sound, freshwater rinse
+              </p>
+              <p className="text-lg lg:text-xl text-gray-700">
+                • <strong>Pro crew</strong> handles routes, gear, and service—<strong>just show up</strong>
+              </p>
+            </div>
           </div>
         </div>
 
-        {/* Image Carousel */}
-        <div className="overflow-hidden">
+        {/* Image Carousel - Full Width Edge to Edge */}
+        <div className="overflow-hidden w-full">
           <div 
             className="flex"
             style={{
@@ -60,11 +62,11 @@ const About = () => {
             }}
           >
             {infiniteImages.map((image, index) => (
-              <div key={index} className="w-full md:w-1/4 px-2">
+              <div key={index} className="w-full md:w-1/4 px-3">
                 <img
                   src={image}
                   alt={`Experience ${(index % images.length) + 1}`}
-                  className="w-full h-64 lg:h-80 object-cover rounded-lg"
+                  className="w-full h-64 lg:h-80 object-cover"
                 />
               </div>
             ))}

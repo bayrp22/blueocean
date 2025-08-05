@@ -41,38 +41,8 @@ const SocialProof = () => {
     }
   ];
 
-  // Split testimonials into two rows
-  const topRowTestimonials = testimonials.slice(0, 3);
-  const bottomRowTestimonials = testimonials.slice(3, 6);
-
-  // Create duplicated arrays for infinite effect
-  const createInfiniteArray = (arr: typeof testimonials) => [...arr, ...arr, ...arr, ...arr];
-
-  const TestimonialCard = ({ testimonial, index }: { testimonial: typeof testimonials[0], index: number }) => (
-    <div
-      key={index}
-      className="bg-white rounded-xl p-8 shadow-sm flex-shrink-0 w-80 mr-6"
-    >
-      <div className="flex gap-1 mb-6">
-        {[...Array(testimonial.rating)].map((_, i) => (
-          <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-        ))}
-      </div>
-      <p className="text-gray-700 text-base mb-6 leading-relaxed">
-        "{testimonial.text}"
-      </p>
-      <div className="flex items-center justify-between">
-        <span className="text-base font-medium text-gray-900">
-          {testimonial.author}
-        </span>
-        {/* Company logo placeholder */}
-        <div className="w-24 h-10 bg-gray-200 rounded"></div>
-      </div>
-    </div>
-  );
-
   return (
-    <section className="min-h-screen flex items-center bg-gray-50 overflow-hidden">
+    <section className="min-h-screen flex items-center bg-gray-50">
       <div className="w-full py-20">
         <div className="text-center mb-16 px-6">
           <Badge className="mb-6 bg-gray-900 text-white px-6 py-2 text-sm">Testimonials</Badge>
@@ -85,20 +55,60 @@ const SocialProof = () => {
         </div>
 
         {/* Top Row - Scrolling Left */}
-        <div className="relative mb-8">
-          <div className="flex animate-scroll-left">
-            {createInfiniteArray(topRowTestimonials).map((testimonial, index) => (
-              <TestimonialCard key={`top-${index}`} testimonial={testimonial} index={index} />
-            ))}
+        <div className="relative mb-8 overflow-hidden whitespace-nowrap">
+          <div className="inline-block animate-marquee-left">
+            {[...Array(8)].map((_, setIndex) => 
+              testimonials.slice(0, 3).map((testimonial, index) => (
+                <div
+                  key={`top-${setIndex}-${index}`}
+                  className="inline-block bg-white rounded-xl p-8 shadow-sm w-80 mr-6 whitespace-normal align-top"
+                >
+                  <div className="flex gap-1 mb-6">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 text-base mb-6 leading-relaxed">
+                    "{testimonial.text}"
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-base font-medium text-gray-900">
+                      {testimonial.author}
+                    </span>
+                    <div className="w-24 h-10 bg-gray-200 rounded"></div>
+                  </div>
+                </div>
+              ))
+            )}
           </div>
         </div>
 
         {/* Bottom Row - Scrolling Right */}
-        <div className="relative">
-          <div className="flex animate-scroll-right">
-            {createInfiniteArray(bottomRowTestimonials).map((testimonial, index) => (
-              <TestimonialCard key={`bottom-${index}`} testimonial={testimonial} index={index} />
-            ))}
+        <div className="relative overflow-hidden whitespace-nowrap">
+          <div className="inline-block animate-marquee-right">
+            {[...Array(8)].map((_, setIndex) => 
+              testimonials.slice(3, 6).map((testimonial, index) => (
+                <div
+                  key={`bottom-${setIndex}-${index}`}
+                  className="inline-block bg-white rounded-xl p-8 shadow-sm w-80 mr-6 whitespace-normal align-top"
+                >
+                  <div className="flex gap-1 mb-6">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 text-base mb-6 leading-relaxed">
+                    "{testimonial.text}"
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-base font-medium text-gray-900">
+                      {testimonial.author}
+                    </span>
+                    <div className="w-24 h-10 bg-gray-200 rounded"></div>
+                  </div>
+                </div>
+              ))
+            )}
           </div>
         </div>
       </div>
