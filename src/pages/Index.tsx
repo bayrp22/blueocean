@@ -1,24 +1,24 @@
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
-import WhyChooseUs from "@/components/WhyChooseUs";
+import About from "@/components/WhyChooseUs";
 import SocialProof from "@/components/SocialProof";
 import GalleryCarousel from "@/components/GalleryCarousel";
-import PricingBooking from "@/components/PricingBooking";
 import FAQs from "@/components/FAQs";
-import StickyCTA from "@/components/StickyCTA";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
     <>
       <Layout>
         <Hero />
-        <WhyChooseUs />
-        <SocialProof />
+        <About />
         <GalleryCarousel />
-        <PricingBooking />
+        <SocialProof />
         <FAQs />
+        <Contact />
+        <Footer />
       </Layout>
-      <StickyCTA />
     </>
   );
 };
